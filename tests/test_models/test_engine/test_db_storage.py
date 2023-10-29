@@ -90,7 +90,16 @@ class TestFileStorage(unittest.TestCase):
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_count(self):
         """Test that count"""
+        from models import storage
+
+        save = storage.all().values()
+        count = 0
+        for i in save:
+            if "State" == i.__class__.__name__:
+                count = count + 1
+        self.assertEqual(count, storage.count(State))
 
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_get(self):
         """Test get"""
+        from models import storage
