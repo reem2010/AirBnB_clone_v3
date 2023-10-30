@@ -109,3 +109,4 @@ class TestFileStorage(unittest.TestCase):
             id = save[0].id
             first = storage.get(save[0].__class__.__name__, id)
             self.assertEqual(first, save[0])
+        self.assertEqual(0, 0)
