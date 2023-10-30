@@ -104,6 +104,10 @@ class TestFileStorage(unittest.TestCase):
         """Test get"""
         from models import storage
 
+        new_state = State()
+        new_state.name = "California"
+        storage.new(new_state)
+        storage.save()
         save = list(storage.all().values())
         id = save[0].id
         first = storage.get(save[0].__class__.__name__, id)
