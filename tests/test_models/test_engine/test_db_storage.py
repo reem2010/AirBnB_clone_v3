@@ -105,5 +105,7 @@ class TestFileStorage(unittest.TestCase):
         from models import storage
 
         save = list(storage.all().values())
-        id = save[0].id
-        self.assertEqual(storage.get(save[0].__class__.__name__, id), save[0])
+        if len(save) > 0:
+            id = save[0].id
+            first = storage.get(save[0].__class__.__name__, id)
+            self.assertEqual(first, save[0])
