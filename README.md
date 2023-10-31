@@ -159,19 +159,5 @@ Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://tw
 
 Second part of Airbnb: Joann Vuong
 ## License
-Public Domain. No copy write protection. 
-hello reem
-hello reem el tanya
-hello tant amany
-hello body
-hello 3mo tro'a
-hello mama
-hello baba
-hello menna
-hello nahed
-ya st om nyaziiii
-s7ii nyaziiii
-2olelo hello world
-kda na2s kam hmoot
-btnaaaay
-7sby allah fe ay 7d msh byrf3 el sho8l f commit wa7ed
+Public Domain. No copy write protection.
+time of work
