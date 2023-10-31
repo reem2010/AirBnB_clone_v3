@@ -3,6 +3,7 @@
 from api.v1.views import app_views
 from flask import jsonify, abort, request
 from models.state import State
+from models.city import City
 from models import storage
 
 
@@ -30,6 +31,7 @@ def state_id(state_id):
 @app_views.route('/states/<state_id>', methods=['DELETE'])
 def del_stat(state_id):
     res_states = list(storage.all(State).values())
+    city = list(storage.all(City).values())
     res = None
     for i in res_states:
         if i.id == state_id:
@@ -37,6 +39,9 @@ def del_stat(state_id):
     if res is None:
         abort(404)
     storage.delete(res)
+    for i in city:
+        if i.state_id == state_id:
+            storage.delete(i)
     storage.save()
     return jsonify({}), 200
 
