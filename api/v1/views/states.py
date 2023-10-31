@@ -75,4 +75,5 @@ def put_states(state_id):
         if key == "updated_at":
             continue
         setattr(res, key, value)
+    storage.save()
     return jsonify(res.to_dict()), 200
