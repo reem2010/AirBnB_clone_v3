@@ -70,5 +70,9 @@ def put_states(state_id):
         abort(400, "Not a JSON")
     state = request.get_json()
     for key, value in state.items():
+        if key == "id" or key == "created_at":
+            continue
+        if key == "updated_at":
+            continue
         setattr(res, key, value)
     return jsonify(res.to_dict()), 200
